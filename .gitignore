@@ -1,8 +1,0 @@
-/* add files for git to ignore */
-
-node_modules
-.idea
-.sass-cache
-npm-debug.log
-.vscode/
-_site
