@@ -514,7 +514,7 @@
 }
 
 // Good
-.pf-selector {
+.io-selector {
   ...
 }
 </code></pre>
@@ -539,46 +539,46 @@
 
 </code></pre>
 
-<!-- ### BEM
+<h3 id="bem">BEM</h3>
 
-PatternFly follows the [BEM methodology](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/). It's a way to decouple CSS from HTML, and modularize class names so they can be extended.
+<p>OpenShift.io follows the <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM methodology</a>. It’s a way to decouple CSS from HTML, and modularize class names so they can be extended.</p>
 
-Class name structure follows the `__--` structure:
+<p>Class name structure follows the <code class="highlighter-rouge">__--</code> structure:</p>
 
-```less
-.pf-block__element--modifier {}
-```
+<pre><code class="language-less">.io-block__element--modifier {}
+</code></pre>
 
-Example:
+<p>Example:</p>
 
-```html
-<div class="pf-panel pf-panel--collapsible">
-  <div class="pf-panel__title">
-    <h1>Heading</h1>
-  </div>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel io-panel--collapsible"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel__title"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Heading<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 
-  <div class="pf-panel__content">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel__content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
 </div>
-```
 
-```less
-.pf-panel {}                      // Block
-.pf-panel--collapsible {}         // Modifier of block
+<pre><code class="language-less">.io-panel {}                      // Block
+.io-panel--collapsible {}         // Modifier of block
 
-.pf-panel__title {}               // Element
+.io-panel__title {}               // Element
 
-.pf-panel__content {}             // Element
-.pf-panel__content--unpadded {}   // Modifier of element
-```
+.io-panel__content {}             // Element
+.io-panel__content--unpadded {}   // Modifier of element
+</code></pre>
 
-**Why it’s better**
+<p><strong>Why it’s better</strong></p>
 
-- All the selectors have same specificity.
-- Every element is defined via a block.
-- Every modifier is defined via a block or element.
-- Each class name imparts structural info without binding to exact HTML. -->
+<ul>
+  <li>All the selectors have same specificity.</li>
+  <li>Every element is defined via a block.</li>
+  <li>Every modifier is defined via a block or element.</li>
+  <li>Each class name imparts structural info without binding to exact HTML.</li>
+</ul>
 
 <!-- ============================================================ -->
 
