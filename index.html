@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <meta name="description" content="fabric8 UXD">
     <meta name="author" content="Adam J. Jolicoeur">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="./assets/img/favicon.svg">
+    <link rel="shortcut icon" href="./assets/img/fabric8.png">
     <title>fabric8 UXD - User Experience Design</title>
     <!-- link to main stylesheet -->
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
@@ -17,9 +17,13 @@
     <!-- PatternFly JS -->
     <script src="./assets/js/vendor/patternfly.min.js"></script>
     <!-- Site JS -->
+    <script src="./assets/js/designSearch.js"></script>
+    <script src="./assets/js/designSort.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,28 +46,43 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li  >
-          <a href="./invision-links">Designs</a>
-        </li>
-        <li >
-          <a href="./ia">Information Architecture</a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arias-haspopup="true" aria-expanded="false">Designs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li  >
+              <a href="./src/docs/designs/platform">Platform</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/planner">Planner</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/bayesian">Bayesian</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/hypothesis">Hypothesis Engine</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li  >
+              <a href="./src/docs/designs/patterns">fabric8 Patterns</a>
+            </li>
+          </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design Resources <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li >
-              <a href="./src/docs/sketch">Sketch Components</a>
+              <a href="./src/docs/resources/sketch">Sketch Components</a>
             </li>
             <li >
-              <a href="./src/docs/photoshop">Photoshop Components</a>
+              <a href="./src/docs/resources/photoshop">Photoshop Components</a>
             </li>
             <li >
-              <a href="./src/docs/colors">Color Palette</a>
+              <a href="./src/docs/resources/colors">Color Palette</a>
             </li>
-            <!--<li>
-              <a href="http://www.patternfly.org/styles/color-palette/" target="top">Color Palette</a>
-            </li>-->
           </ul>
+        </li>
+        <li >
+          <a href="./src/docs/resources/ia">Information Architecture</a>
         </li>
         <li >
           <a href="./code-guidelines">Code Guidelines</a>
@@ -91,108 +110,13 @@
 
     <section>
       <div class="container-fluid">
-        <h1 id="fabric8io-design-documentation">Fabric8io Design Documentation</h1>
-<p>| design documents and UX mockups for fabric8io and OpenShift.io</p>
+        <h1 id="fabric8-ui-design-documentation">fabric8-ui design documentation</h1>
+<p><em>design documents and UX mockups for fabric8-ui and OpenShift.io</em></p>
 
 <hr />
 
 <div class="container-fluid">
-  <div class="col-md-6">
-    <h2>
-      Local Development
-    </h2>
-    <p>
-      You can run this site locally using npm, gulp and jekyll.
-    </p>
-    <h3>
-      First Time Build
-    </h3>
-    <ul>
-      <li>
-        Verify that you have the following installed:
-          <ul>
-            <li>
-              Node
-            </li>
-            <li>
-              Gulp
-            </li>
-            <li>
-              Jekyll
-            </li>
-          </ul>
-        </li>
-        <li>
-          run <code>npm install</code>
-        </li>
-        <li>
-          run <code>gulp</code>
-          <ul>
-            <li>
-              this will copy the files from your npm_modules directory to their respective locations for the jekyll build process
-            </li>
-          </ul>
-        </li>
-        <li>
-          run <code>jekyll build</code>
-        </li>
-        <li>
-          run <code>jekyll serve</code>
-          <ul>
-            <li>
-              for viewing locally at <a href="http://localhost:4000" target="_blank">http://localhost:4000</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h3>
-        Subsequent Builds
-      </h3>
-      <ul>
-        <li>
-          Run the npm command <code>npm run site</code>
-        </li>
-      </ul>
-      <h3>
-        Troubleshooting
-      </h3>
-      <p>
-        If you are having issues with the site building, you can run two sets of clean commands:
-        <ul>
-          <li>
-            <code>gulp cleanVendors</code>
-            <ul>
-              <li>
-                This will remove the vendor files that were copied over during the <code>gulp</code> process.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <code>npm run clean</code>
-            <ul>
-              <li>
-                This will remove your node_modules directory, run <code>npm install</code>, run <code>gulp cleanVendors</code> to remove any old vendor files, and run <code>gulp</code> to copy updated vendor files.
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </p>
-      <p>
-        If you have issues with your gem bundles, you can run the following command:
-        <ul>
-          <li>
-            <code>npm run bundle</code>
-            <ul>
-              <li>
-                This will update the gem bundles. If you do not have node installed, just run <code>bundle update</code>.
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </p>
-  </div>
-
-  <div class="col-md-6">
+  <div class="col-sm-12">
     <div class="container-fluid container-cards-pf">
       <div class="row row-cards-pf">
         <div class="card-pf card-pf-view">
@@ -201,7 +125,7 @@
               <span class="fa fa-github card-pf-icon-circle"></span>
             </div>
             <h2 class="card-pf-title text-center">
-              Fabric8-UX
+              fabric8-ux
             </h2>
             <p class="card-pf-info text-center">
               This repo is for user experience issues related to the planner and platform UIs.
@@ -211,10 +135,10 @@
             </p>
             <div class="card-pf-items text-center">
               <div class="card-pf-item">
-                <a class="github-button" href="https://github.com/ntkme/github-buttons/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch ntkme/github-buttons on GitHub">Watch</a>
+                <a class="github-button" href="https://github.com/fabric8-ui/fabric8-ux/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch fabric8-ui/fabric8-ux on GitHub">Watch</a>
               </div>
               <div class="card-pf-item">
-                <a class="github-button" href="https://github.com/ntkme/github-buttons" data-icon="octicon-star" data-size="large" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/fabric8-ui/fabric8-ux" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star fabric8-ui/fabric8-ux on GitHub">Star</a>
               </div>
             </div>
           </div>

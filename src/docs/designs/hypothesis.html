@@ -1,0 +1,217 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="fabric8 UXD">
+    <meta name="author" content="Adam J. Jolicoeur">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../../../assets/img/fabric8.png">
+    <title>Hypothesis Engine Designs</title>
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/styles.css">
+    <!-- jQuery -->
+    <script src="../../../assets/js/vendor/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../../../assets/js/vendor/bootstrap.min.js"></script>
+    <!-- PatternFly JS -->
+    <script src="../../../assets/js/vendor/patternfly.min.js"></script>
+    <!-- Site JS -->
+    <script src="../../../assets/js/designSearch.js"></script>
+    <script src="../../../assets/js/designSort.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">
+        <img alt="brand" src="../../../assets/img/fabric8.png" alt="fabric8 User Experience" width="25px">
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li >
+          <a href="../../../">Home 
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arias-haspopup="true" aria-expanded="false">Designs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li  >
+              <a href="../../../src/docs/designs/platform">Platform</a>
+            </li>
+            <li  >
+              <a href="../../../src/docs/designs/planner">Planner</a>
+            </li>
+            <li  >
+              <a href="../../../src/docs/designs/bayesian">Bayesian</a>
+            </li>
+            <li  class="active" >
+              <a href="../../../src/docs/designs/hypothesis">Hypothesis Engine</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li  >
+              <a href="../../../src/docs/designs/patterns">fabric8 Patterns</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design Resources <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li >
+              <a href="../../../src/docs/resources/sketch">Sketch Components</a>
+            </li>
+            <li >
+              <a href="../../../src/docs/resources/photoshop">Photoshop Components</a>
+            </li>
+            <li >
+              <a href="../../../src/docs/resources/colors">Color Palette</a>
+            </li>
+          </ul>
+        </li>
+        <li >
+          <a href="../../../src/docs/resources/ia">Information Architecture</a>
+        </li>
+        <li >
+          <a href="../../../code-guidelines">Code Guidelines</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GitHub Links <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="https://github.com/fabric8io/fabric8-ux/issues" target="_blank">Issue</a>
+            </li>
+            <li>
+              <a href="https://github.com/fabric8io/fabric8-ux/milestones" target="_blank">Milestone</a>
+            </li>
+            <li>
+              <a href="https://github.com/fabric8io/fabric8-ux/wiki" target="_blank">Wiki</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <style>
+      .hide { display: none; }
+    </style>
+    <!-- Toolbar -->
+    <div class="row toolbar-pf table-view-pf-toolbar" id="toolbar1">
+  <div class="col-sm-12">
+    <form class="toolbar-pf-actions">
+      <div class="form-group toolbar-pf-filter">
+        <label class="sr-only" for="filter">
+          Filter Designs
+        </label>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" id="filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter Designs <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a data-target="#" id="design">Design Title</a>
+              </li>
+              <li>
+                <a data-target="#" id="designer">Designer</a>
+              </li>
+            </ul>
+          </div>
+          <input type="text" class="form-control" placeholder="by Design Title..." autocomplete="off" id="designFilter" onkeyup="titleFunction()">
+          <input type="text" class="form-control hide" placeholder="by Designer..." autocomplete="off" id="designerFilter" onkeyup="designerFunction()">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+    <section>
+      <div class="container-fluid">
+        <div class="col-sm-12">
+          <div class="col-sm-5">
+            <h1>Hypothesis Engine Designs</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+  <div class="col-sm-7 col-sm-offset-5">
+    <ul class="status-list col-sm-3">
+      <li class="legend">LEGEND</li>
+    </ul>
+    <ul class="status-list col-sm-3">
+      <li class="orange">In Progress</li>
+      <li class="blue">Ready for implementation</li>
+    </ul>
+    <ul class="status-list col-sm-3">
+      <li class="green">UXD verified</li>
+      <li class="red">Designs need to be updated</li>
+    </ul>
+    <ul class="status-list col-sm-3">
+      <li class="purple">Planned - current goal by UXD</li>
+      <li class="grey">Unplanned - future goal by UXD</li>
+    </ul>
+  </div>
+</div>
+
+      <div class="container-fluid">
+
+        <table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><a href="javascript:SortTable(0);" class="sort">Design Title</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(1);" class="sort">Type</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(2);" class="sort">Designer</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(3);" class="sort">Status<a></a></a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(4, 'D', 'mdy');" class="sort">Last Updated</a></th>
+      <th style="text-align: left">Design Links</th>
+      <th style="text-align: left">Work Item Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="all-markdown-written-using-this-cheatsheet">All markdown written using this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheatsheet</a>.</h6>
+
+
+      </div><!-- /.container -->
+    </section>
+    <script>
+    $("table").addClass("table table-striped table-bordered table-hover").attr("id", "designTable");
+    // $("table").attr("id", "myTable2");
+    $("table>tbody>tr>td>a").attr("target", "top");
+    $("table>tbody>tr>td:contains('Out of Date')").addClass("red");
+    $("table>tbody>tr>td:contains('Done')").addClass("green");
+    $("table>tbody>tr>td:contains('Ready for Dev')").addClass("blue");
+    $("table>tbody>tr>td:contains('In Progress')").addClass("orange");
+    $("table>tbody>tr>td:contains('TBD')").addClass("grey");
+    $("table>tbody>tr>td:contains('Not Yet Started')").addClass("purple");
+    </script>
+    
+</html>
+

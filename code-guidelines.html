@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <meta name="description" content="fabric8 UXD">
     <meta name="author" content="Adam J. Jolicoeur">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="./assets/img/favicon.svg">
+    <link rel="shortcut icon" href="./assets/img/fabric8.png">
     <title>HTML/CSS Code Guidelines</title>
     <!-- link to main stylesheet -->
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
@@ -17,9 +17,13 @@
     <!-- PatternFly JS -->
     <script src="./assets/js/vendor/patternfly.min.js"></script>
     <!-- Site JS -->
+    <script src="./assets/js/designSearch.js"></script>
+    <script src="./assets/js/designSort.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,28 +46,43 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li  >
-          <a href="./invision-links">Designs</a>
-        </li>
-        <li >
-          <a href="./ia">Information Architecture</a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arias-haspopup="true" aria-expanded="false">Designs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li  >
+              <a href="./src/docs/designs/platform">Platform</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/planner">Planner</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/bayesian">Bayesian</a>
+            </li>
+            <li  >
+              <a href="./src/docs/designs/hypothesis">Hypothesis Engine</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li  >
+              <a href="./src/docs/designs/patterns">fabric8 Patterns</a>
+            </li>
+          </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design Resources <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li >
-              <a href="./src/docs/sketch">Sketch Components</a>
+              <a href="./src/docs/resources/sketch">Sketch Components</a>
             </li>
             <li >
-              <a href="./src/docs/photoshop">Photoshop Components</a>
+              <a href="./src/docs/resources/photoshop">Photoshop Components</a>
             </li>
             <li >
-              <a href="./src/docs/colors">Color Palette</a>
+              <a href="./src/docs/resources/colors">Color Palette</a>
             </li>
-            <!--<li>
-              <a href="http://www.patternfly.org/styles/color-palette/" target="top">Color Palette</a>
-            </li>-->
           </ul>
+        </li>
+        <li >
+          <a href="./src/docs/resources/ia">Information Architecture</a>
         </li>
         <li  class="active">
           <a href="./code-guidelines">Code Guidelines</a>
@@ -92,10 +111,9 @@
     <section>
       <div class="container-fluid">
         <h1 id="openshiftio-htmlcss-code-guidelines">OpenShift.io HTML/CSS Code Guidelines</h1>
+<p><em>covering HTML, CSS (Less) and structure</em></p>
 
 <hr />
-
-<h2 id="this-is-a-draft-and-is-still-in-progress"><strong>This is a draft and is still in progress</strong></h2>
 
 <p>Please enforce these guidelines at all times. Small or large, call out what is incorrect.</p>
 
@@ -105,7 +123,7 @@
 
 <p>This set of rules generate some constraints and conventions. If you run into instances where a convention is not obvious or a solution could be handled in a few different ways, contact the OpenShift.io community and have a conversation about how to handle it and update these guidelines when needed.</p>
 
-<h2 id="table-of-content-wip">Table of content (WIP)</h2>
+<h2 id="table-of-contents">Table of Contents</h2>
 
 <ul>
   <li>HTML
@@ -132,6 +150,8 @@
 </ul>
 
 <!-- ============================================================ -->
+
+<hr />
 
 <h1 id="html">HTML</h1>
 
@@ -211,6 +231,8 @@
 <p>Preferably, we want to keep our lines of HTML to 120 characters or less. This is enforced in our Less Hint configuration.</p>
 
 <!-- ============================================================ -->
+
+<hr />
 
 <h1 id="css">CSS</h1>
 

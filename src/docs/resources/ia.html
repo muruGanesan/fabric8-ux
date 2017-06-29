@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -6,20 +6,24 @@
     <meta name="description" content="fabric8 UXD">
     <meta name="author" content="Adam J. Jolicoeur">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="./assets/img/favicon.svg">
+    <link rel="shortcut icon" href="../../../assets/img/fabric8.png">
     <title>IA Sitemap</title>
     <!-- link to main stylesheet -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/styles.css">
     <!-- jQuery -->
-    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="../../../assets/js/vendor/jquery.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="./assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../../../assets/js/vendor/bootstrap.min.js"></script>
     <!-- PatternFly JS -->
-    <script src="./assets/js/vendor/patternfly.min.js"></script>
+    <script src="../../../assets/js/vendor/patternfly.min.js"></script>
     <!-- Site JS -->
+    <script src="../../../assets/js/designSearch.js"></script>
+    <script src="../../../assets/js/designSort.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,43 +34,58 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./">
-        <img alt="brand" src="./assets/img/fabric8.png" alt="fabric8 User Experience" width="25px">
+      <a class="navbar-brand" href="../../../">
+        <img alt="brand" src="../../../assets/img/fabric8.png" alt="fabric8 User Experience" width="25px">
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li >
-          <a href="./">Home 
+          <a href="../../../">Home 
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li  >
-          <a href="./invision-links">Designs</a>
-        </li>
-        <li  class="active dropdown">
-          <a href="./ia">Information Architecture</a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arias-haspopup="true" aria-expanded="false">Designs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li  >
+              <a href="../../../src/docs/designs/platform">Platform</a>
+            </li>
+            <li  >
+              <a href="../../../src/docs/designs/planner">Planner</a>
+            </li>
+            <li  >
+              <a href="../../../src/docs/designs/bayesian">Bayesian</a>
+            </li>
+            <li  >
+              <a href="../../../src/docs/designs/hypothesis">Hypothesis Engine</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li  >
+              <a href="../../../src/docs/designs/patterns">fabric8 Patterns</a>
+            </li>
+          </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design Resources <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li >
-              <a href="./src/docs/sketch">Sketch Components</a>
+              <a href="../../../src/docs/resources/sketch">Sketch Components</a>
             </li>
             <li >
-              <a href="./src/docs/photoshop">Photoshop Components</a>
+              <a href="../../../src/docs/resources/photoshop">Photoshop Components</a>
             </li>
             <li >
-              <a href="./src/docs/colors">Color Palette</a>
+              <a href="../../../src/docs/resources/colors">Color Palette</a>
             </li>
-            <!--<li>
-              <a href="http://www.patternfly.org/styles/color-palette/" target="top">Color Palette</a>
-            </li>-->
           </ul>
         </li>
+        <li  class="active dropdown">
+          <a href="../../../src/docs/resources/ia">Information Architecture</a>
+        </li>
         <li >
-          <a href="./code-guidelines">Code Guidelines</a>
+          <a href="../../../code-guidelines">Code Guidelines</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -92,6 +111,7 @@
     <section>
       <div class="container-fluid">
         <h1 id="openshiftio-ia">OpenShift.io IA</h1>
+<p><em>information architecture for the OpenShift.io environment</em></p>
 
 <hr />
 
