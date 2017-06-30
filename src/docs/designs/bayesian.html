@@ -126,14 +126,14 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a data-target="#" id="design">Design Title</a>
+                <a data-target="#" id="design">by Design</a>
               </li>
               <li>
-                <a data-target="#" id="designer">Designer</a>
+                <a data-target="#" id="designer">by Designer</a>
               </li>
             </ul>
           </div>
-          <input type="text" class="form-control" placeholder="by Design Title..." autocomplete="off" id="designFilter" onkeyup="titleFunction()">
+          <input type="text" class="form-control" placeholder="by Design..." autocomplete="off" id="designFilter" onkeyup="titleFunction()">
           <input type="text" class="form-control hide" placeholder="by Designer..." autocomplete="off" id="designerFilter" onkeyup="designerFunction()">
         </div>
       </div>
@@ -147,84 +147,75 @@
           <div class="col-sm-5">
             <h1>Bayesian Designs</h1>
           </div>
+          <div class="col-sm-7">
+  <ul class="status-list col-sm-3">
+    <li class="legend">LEGEND</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="orange">In Progress</li>
+    <li class="blue">Ready for Implementation</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="green">UXD Verified</li>
+    <li class="red">Designs Needing Updates</li>
+  </ul>
+  <ul class="status-list col-sm-3">
+    <li class="purple">Planned</li>
+    <li class="grey">Unplanned</li>
+  </ul>
+</div>
+
         </div>
       </div>
       <div class="container-fluid">
-  <div class="col-sm-7 col-sm-offset-5">
-    <ul class="status-list col-sm-3">
-      <li class="legend">LEGEND</li>
-    </ul>
-    <ul class="status-list col-sm-3">
-      <li class="orange">In Progress</li>
-      <li class="blue">Ready for implementation</li>
-    </ul>
-    <ul class="status-list col-sm-3">
-      <li class="green">UXD verified</li>
-      <li class="red">Designs need to be updated</li>
-    </ul>
-    <ul class="status-list col-sm-3">
-      <li class="purple">Planned - current goal by UXD</li>
-      <li class="grey">Unplanned - future goal by UXD</li>
-    </ul>
-  </div>
-</div>
-
-      <div class="container-fluid">
-
         <table>
   <thead>
     <tr>
-      <th style="text-align: left"><a href="javascript:SortTable(0);" class="sort">Design Title</a></th>
-      <th style="text-align: left"><a href="javascript:SortTable(1);" class="sort">Type</a></th>
-      <th style="text-align: left"><a href="javascript:SortTable(2);" class="sort">Designer</a></th>
-      <th style="text-align: left"><a href="javascript:SortTable(3);" class="sort">Status<a></a></a></th>
-      <th style="text-align: left"><a href="javascript:SortTable(4, 'D', 'mdy');" class="sort">Last Updated</a></th>
-      <th style="text-align: left">Design Links</th>
-      <th style="text-align: left">Work Item Link</th>
+      <th style="text-align: left"><a href="javascript:SortTable(0);" id="designTableTitle" class="sort">Design</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(1);" id="designTableType" class="sort">Type</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(2);" id="designTableDesigner" class="sort">Designer</a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(3);" id="designTableStatus" class="sort">Status<a></a></a></th>
+      <th style="text-align: left"><a href="javascript:SortTable(4, 'D', 'mdy');" id="designTableUpdate" class="sort">Last Updated</a></th>
+      <th style="text-align: left"><span id="designTableWILinks">Work Item Link</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">Bayesian Report – IA</td>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/FGAMYKX6E">Bayesian Report – IA</a></td>
       <td style="text-align: left">Workflow</td>
       <td style="text-align: left">Jessica</td>
       <td style="text-align: left">Ready for Dev</td>
       <td style="text-align: left">02/27/2017</td>
-      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/FGAMYKX6E">https://redhat.invisionapp.com/share/FGAMYKX6E</a></td>
-      <td style="text-align: left"><a href="https://github.com/fabric8io/fabric8-ux/issues/196">UX GitHub Issue 196</a></td>
+      <td style="text-align: left"><a href="https://github.com/fabric8-ui/fabric8-ux/issues/196">UX GitHub Issue 196</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">Bayesian Report – Overview</td>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/ZRAM1RRPJ">Bayesian Report – Overview</a></td>
       <td style="text-align: left">Wireframe</td>
       <td style="text-align: left">Jessica</td>
       <td style="text-align: left">Ready for Dev</td>
       <td style="text-align: left">02/27/2017</td>
-      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/ZRAM1RRPJ">https://redhat.invisionapp.com/share/ZRAM1RRPJ</a></td>
-      <td style="text-align: left"><a href="https://github.com/fabric8io/fabric8-ux/issues/200">UX GitHub Issue 200</a></td>
+      <td style="text-align: left"><a href="https://github.com/fabric8-ui/fabric8-ux/issues/200">UX GitHub Issue 200</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">Bayesian Report – Create work item</td>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/27AM2N4N9">Bayesian Report – Create work item</a></td>
       <td style="text-align: left">Wireframe</td>
       <td style="text-align: left">Jessica</td>
       <td style="text-align: left">Ready for Dev</td>
       <td style="text-align: left">02/27/2017</td>
-      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/27AM2N4N9">https://redhat.invisionapp.com/share/27AM2N4N9</a></td>
-      <td style="text-align: left"><a href="https://github.com/fabric8io/fabric8-ux/issues/177">UX GitHub Issue 177</a></td>
+      <td style="text-align: left"><a href="https://github.com/fabric8-ui/fabric8-ux/issues/177">UX GitHub Issue 177</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">Bayesian Report – Visuals</td>
+      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/7VBBOXXZS">Bayesian Report – Visuals</a></td>
       <td style="text-align: left">Visual</td>
       <td style="text-align: left">Jessica</td>
       <td style="text-align: left">Ready for Dev</td>
       <td style="text-align: left">04//2017</td>
-      <td style="text-align: left"><a href="https://redhat.invisionapp.com/share/7VBBOXXZS">https://redhat.invisionapp.com/share/7VBBOXXZS</a></td>
-      <td style="text-align: left"><a href="https://github.com/fabric8io/fabric8-ux/issues/387">UX GitHub Issue 387</a></td>
+      <td style="text-align: left"><a href="https://github.com/fabric8-ui/fabric8-ux/issues/387">UX GitHub Issue 387</a></td>
     </tr>
   </tbody>
 </table>
 
 <h6 id="all-markdown-written-using-this-cheatsheet">All markdown written using this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheatsheet</a>.</h6>
-
 
       </div><!-- /.container -->
     </section>
