@@ -538,7 +538,7 @@
 
 <h3 id="namespace">Namespace</h3>
 
-<p>To avoid conflicts, OpenShift.io prefixes all classes with io-”. This also helps differentiate OpenShift.io from PatternFly and Bootstrap class names.</p>
+<p>To avoid conflicts, OpenShift.io prefixes all classes with <code class="highlighter-rouge">f8-</code>. This also helps differentiate OpenShift.io from PatternFly and Bootstrap class names.</p>
 
 <pre><code class="language-less">// Bad
 .selector {
@@ -546,7 +546,7 @@
 }
 
 // Good
-.io-selector {
+.f8-selector {
   ...
 }
 </code></pre>
@@ -556,7 +556,7 @@
 <p>Always use classes - avoid using an ID. Use classes over generic element tag for optimum rendering performance.</p>
 
 <pre><code class="language-less">// Bad
-.io-card {
+.f8-card {
   color: #000;
 
   h2{
@@ -565,9 +565,9 @@
 }
 
 // Good
-.io-card { color: #000; }
+.f8-card { color: #000; }
 
-.io-card--title{ font-size: 2em; }
+.f8-card--title{ font-size: 2em; }
 
 </code></pre>
 
@@ -577,30 +577,30 @@
 
 <p>Class name structure follows the <code class="highlighter-rouge">__--</code> structure:</p>
 
-<pre><code class="language-less">.io-block__element--modifier {}
+<pre><code class="language-less">.f8-block__element--modifier {}
 </code></pre>
 
 <p>Example:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel io-panel--collapsible"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel__title"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f8-panel io-panel--collapsible"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f8-panel__title"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Heading<span class="nt">&lt;/h1&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"io-panel__content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f8-panel__content"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre>
 </div>
 
-<pre><code class="language-less">.io-panel {}                      // Block
-.io-panel--collapsible {}         // Modifier of block
+<pre><code class="language-less">.f8-panel {}                      // Block
+.f8-panel--collapsible {}         // Modifier of block
 
-.io-panel__title {}               // Element
+.f8-panel__title {}               // Element
 
-.io-panel__content {}             // Element
-.io-panel__content--unpadded {}   // Modifier of element
+.f8-panel__content {}             // Element
+.f8-panel__content--unpadded {}   // Modifier of element
 </code></pre>
 
 <p><strong>Why it’s better</strong></p>
@@ -621,12 +621,12 @@
 <pre><code class="language-less">// Bad
 .header .search-box input[type=search] + .button {}
 
-.io-search-box {
+.f8-search-box {
   .btn {}
 }
 
 // Good
-.io-search__button {}
+.f8-search__button {}
 </code></pre>
 
 <h3 id="nesting">Nesting</h3>
@@ -650,7 +650,7 @@
 
 <p><strong>Do progressive enhancement, not gracefully degrade.</strong></p>
 
-<pre><code class="language-less">.io-nav {
+<pre><code class="language-less">.f8-nav {
   ...
 
   // Styles for small view ports and up
@@ -662,17 +662,17 @@
 
 <p>Make use of the [precompiler’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism. This allows all rules for a given component to be maintained in one location.</p>
 
-<pre><code class="language-less">.io-primary-nav {
+<pre><code class="language-less">.f8-primary-nav {
   ...
 
   // Nav appearing in header: Right-align navigation when it appears in the header
-  .io-header &amp; {
+  .f8-header &amp; {
     margin-left: auto;
   }
 }
 </code></pre>
 
-<p>All styles for <code class="highlighter-rouge">.io-primary-nav</code> should be found in one place, rather than scattered throughout multiple partial files.</p>
+<p>All styles for <code class="highlighter-rouge">.f8-primary-nav</code> should be found in one place, rather than scattered throughout multiple partial files.</p>
 
 <h4 id="4-states-pseudo-classes-and-pseudo-elements">4. States, pseudo-classes and pseudo-elements</h4>
 
@@ -694,14 +694,14 @@
 <p><strong>To overwrite Bootstrap:</strong></p>
 
 <ul>
-  <li>Create a new <code class="highlighter-rouge">io-</code> block element to live beside the Bootstrap or PatternFly block instead of a modifier.</li>
+  <li>Create a new <code class="highlighter-rouge">f8-</code> block element to live beside the Bootstrap or PatternFly block instead of a modifier.</li>
   <li>Be precise and accurate, introduce as little modifications as possible to achieve the design.</li>
   <li>Base your styles on the original bootstrap less file.</li>
   <li>Bootstrap uses a modified version of BEM: <code class="highlighter-rouge">--</code>.</li>
 </ul>
 
 <pre><code class="language-less">// OpenShift.io card block
-.io-card {
+.f8-card {
   border: none;
 
   // Overwrite Bootstrap card header element
@@ -718,7 +718,7 @@
 }
 
 // OpenShift.io card modifier
-.io-card--accented {
+.f8-card--accented {
   border-top: 2px solid;
   border-color: @color-pf-blue-300;
 }    
