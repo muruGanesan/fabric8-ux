@@ -37,5 +37,5 @@ relative_path: ../../../
 | [Work Item - Hierarchy](https://redhat.invisionapp.com/share/ZPB1VOOXS)                             | Visual                | Sunil         | Ready for Dev     |             | [UX GitHub Issue 134](https://github.com/fabric8-ui/fabric8-ux/issues/134)
 | [Work Item - Detail Panel Holistic Review](https://redhat.invisionapp.com/share/4WB800RHD)          | Visual                | Brian         | In Progress       |             | [UX GitHub Issue 286](https://github.com/fabric8-ui/fabric8-ux/issues/286)
 | [Work Item - Modular Behavior](https://redhat.invisionapp.com/share/8QACKL3AY)                      | Wireframe             | Monica        | Ready for Dev     | 02/06/2017  | [UX GitHub Issue 314](https://github.com/fabric8-ui/fabric8-ux/issues/314)
-
+| [Work Item - OSIO Analytic Stack Report](https://)                      | Visual             | Ashish        | Ready for Dev     | 10/25/2017  | [UX GitHub Issue #](https://)
 ###### All markdown written using this [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
